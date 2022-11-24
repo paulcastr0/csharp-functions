@@ -7,10 +7,10 @@
 int[] arrayDiNumeri = { 2, 6, 7, 5, 3, 9 };
 StampaArrayInteri(arrayDiNumeri);
 
-int number = 2;
-Console.WriteLine("Il numero originale è: " + number);
-raddoppiaNumeroRef(ref number);
-Console.WriteLine("Il numero raddoppiato è: " + number);
+int Quadrato = 2;
+Console.WriteLine("Il numero originale è: " + Quadrato);
+raddoppiaNumeroRef(ref Quadrato);
+Console.WriteLine("Il numero raddoppiato è: " + Quadrato);
 
 Console.WriteLine("Array di numeri originale: ");
 StampaArrayInteri(arrayDiNumeri);
@@ -23,7 +23,13 @@ StampaArrayInteri(arrayDiNumeri);
 Console.WriteLine("Array di numeri incrementato originale: ");
 StampaArrayInteri(arrayDiNumeriIncrementato);
 
-Console.Write("La somma dei numeri originali è: " + SommaNumeri);
+int somma = SommaNumeri(arrayDiNumeri);
+Console.Write("La somma dei numeri originali è: " + somma);
+
+int somma2 = SommaNumeriQuadrato(arrayDiNumeriIncrementato);
+Console.Write("La somma dei numeri al quadrato è: " + somma2);
+
+
 
 // --------------- DICHIARAZIONE DELLE FUNZIONI ------------------------
 
@@ -87,7 +93,7 @@ int[] incrementoArrayNumeri(int[] arrayNumeri)
 }
 
 
-int SommaNumeri() 
+int SommaNumeri(int[] arrayNumeri) 
 {
     int sum = 0;
     for (int i = 0; i < arrayDiNumeri.Length; i++)
@@ -99,4 +105,12 @@ int SommaNumeri()
 
 
 
-
+int SommaNumeriQuadrato(int[] arrayDiNumeriIncrementato)
+{
+    int sum1 = 0;
+    for (int i = 0; i < arrayDiNumeriIncrementato.Length; i++)
+    {
+        sum1 += arrayDiNumeriIncrementato[i];
+    }
+    return sum1;
+}
